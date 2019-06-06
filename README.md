@@ -2,7 +2,7 @@
 
 nc-dx-input widget for [ncform](https://github.com/ncform/ncform)
 
-![](https://raw.githubusercontent.com/daniel-dx/nc-dx-input/master/preview.gif)
+![](https://raw.githubusercontent.com/ncform/nc-dx-input/master/preview.gif)
 
 ## Install and basic usage
 

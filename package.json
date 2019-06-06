@@ -1,5 +1,5 @@
 {
-  "name": "nc-dx-input",
+  "name": "@ncform/nc-dx-input",
   "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -48,7 +48,7 @@
   "description": "Support for switching between dx expression input and other form controls",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daniel-dx/nc-dx-input.git"
+    "url": "git+https://github.com/ncform/nc-dx-input.git"
   },
   "author": "daniel.xiao",
   "keywords": [
