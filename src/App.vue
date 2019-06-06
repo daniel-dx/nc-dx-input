@@ -25,7 +25,7 @@ export default {
         properties: {
           demo: {
             type: "array",
-            value: 'dx: ["a"]',
+            // value: 'dx: ["a"]',
             // value: ["a", "b"],
             ui: {
               widget: "nc-dx-input",

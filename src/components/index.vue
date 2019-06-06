@@ -6,7 +6,7 @@
       <template slot="prepend">dx:</template>
     </el-input>
 
-    <ncform style="flex: 1; margin: -15px -15px -10px"
+    <ncform v-if="!onlyDXMode" style="flex: 1; margin: -15px -15px -10px"
       v-show="!isDxMode"
       :form-schema="formSchema"
       :form-name="formName"
@@ -14,7 +14,7 @@
       :is-dirty.sync="isFormDirty"
     ></ncform>
 
-    <el-switch style="margin: 8px" v-model="isDxMode" active-text="DX" @change="handleDXModeChange"></el-switch>
+    <el-switch v-if="!onlyDXMode" style="margin: 8px" v-model="isDxMode" active-text="DX" @change="handleDXModeChange"></el-switch>
   </div>
 </template>
 
@@ -39,9 +39,10 @@ export default {
   },
 
   created() {
-    if (typeof this.modelVal === 'string' && this.modelVal.indexOf('dx:') === 0) { // is dx expression string value
+    this.$data.onlyDXMode = !this.mergeConfig.realWidget.widget;
+    if ((typeof this.modelVal === 'string' && this.modelVal.indexOf('dx:') === 0) || this.$data.onlyDXMode) { // is dx expression string value
       this.$data.isDxMode = true;
-      this.$data.dxVal = this.modelVal.replace('dx:', '');
+      this.$data.dxVal = String(this.modelVal).replace('dx:', '');
     } else {
       this.$data.isDxMode = false;
       this.formVal = {
@@ -54,6 +55,7 @@ export default {
     return {
       formName: "dx-input_" + ncformCommon.ncformUtils.genRandomId(),
       isDxMode: true,
+      onlyDXMode: false,
 
       isFormDirty: false,
       formVal: {},
@@ -62,7 +64,7 @@ export default {
       defaultConfig: {
         // your config's default value ( Note: use mergeConfig to get config value )
         realWidget: {
-          widget: "input",
+          widget: "",
           widgetConfig: {}
         }
       }
