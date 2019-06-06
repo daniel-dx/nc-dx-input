@@ -7,13 +7,13 @@ nc-dx-input widget for [ncform](https://github.com/ncform/ncform)
 ## Install and basic usage
 
 ```
-npm i -s nc-dx-input
+npm i -s @ncform/nc-dx-input
 ```
 
 **Add the widget**
 
 ```
-import ncDxInput from 'nc-dx-input';
+import ncDxInput from '@ncform/nc-dx-input';
 
 Vue.use(vueNcform, { extComponents: {ncDxInput} });
 
