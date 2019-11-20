@@ -29,22 +29,24 @@ Vue.use(vueNcform, { extComponents: {ncDxInput} });
   "properties": {
     "name": {
       "type": "array",
-      "widget": "nc-dx-input",
-      "widgetConfig": {
-        "realWidget": {
-          "widget": "select",
-          "widgetConfig": {
-            "multiple": true,
-            "enumSource": [
-              {
-                "value": "daniel",
-                "label": "daniel"
-              },
-              {
-                "value": "sarah",
-                "label": "sarah"
-              }
-            ]
+      "ui": {
+        "widget": "nc-dx-input",
+        "widgetConfig": {
+          "realWidget": {
+            "widget": "select",
+            "widgetConfig": {
+              "multiple": true,
+              "enumSource": [
+                {
+                  "value": "daniel",
+                  "label": "daniel"
+                },
+                {
+                  "value": "sarah",
+                  "label": "sarah"
+                }
+              ]
+            }
           }
         }
       }
