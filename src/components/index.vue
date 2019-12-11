@@ -12,6 +12,7 @@
       :form-name="formName"
       v-model="formVal"
       :is-dirty.sync="isFormDirty"
+      @change="handleValChange"
     ></ncform>
 
     <el-switch v-if="!onlyDXMode" style="margin: 8px" v-model="isDxMode" active-text="DX" @change="handleDXModeChange"></el-switch>
@@ -111,6 +112,10 @@ export default {
 
     handleDXChange() {
       this.modelVal = `dx: ${this.$data.dxVal.trim()}`
+    },
+
+    handleValChange() {
+      this.modelVal = this.$data.formVal.value
     },
 
     // you can handle the modelVal before $emit it ( before this.$emit('input') )
